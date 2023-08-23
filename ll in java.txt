@@ -1,0 +1,80 @@
+
+class ll1{
+    Node head;
+    class Node{
+        String data;
+        Node next;
+
+
+        public Node(String data) {
+            this.data = data;
+            this.next = null;
+        }
+    }
+
+    public void addfirst(String data)
+    {
+        Node newnode=new Node(data);
+        if(head==null)
+        {
+            head= newnode;
+            return ;
+        }
+        newnode.next=head;
+        head=newnode;
+    }
+    public  void addlast( String data)
+    {
+        Node newnode=new Node(data);
+        if(head==null)
+        {
+            head=newnode ;
+            return ;
+        }
+
+        Node  cnode=head;
+        while(cnode.next!=null)
+        {
+            cnode=cnode.next;
+        }
+        cnode.next=newnode;
+    }
+    public  void printlist()
+    {
+        if(head==null)
+        {
+            System.out.println("list is empty");
+            return;
+        }
+
+        Node  cnode=head;
+        while(cnode!=null)
+        {
+            System.out.printf("%s->",cnode.data);
+            cnode=cnode.next;
+        }
+
+        System.out.println("null");
+    }
+}
+
+
+public class vb {
+
+    public static void main(String[] args) {
+
+        ll1 list =new ll1();
+
+        list.addfirst("ravi");
+        list.addfirst("priya");
+
+        list.printlist();
+        list.addlast("kale");
+        list.addlast("poss");
+        list.printlist();
+
+        list.addfirst("raku");
+        list.printlist();
+
+  }
+}

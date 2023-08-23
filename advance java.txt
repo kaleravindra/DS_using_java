@@ -1,0 +1,36 @@
+package com.company;
+
+
+import java.util.ArrayList;
+
+public class ghirhub {
+    public static void main(String[] args) {
+
+        ArrayList<String> l1=new ArrayList<>();
+        ArrayList<String>l2=new ArrayList<>();
+
+        l1.add("mechanical");
+        l1.add("runnnre");
+        l1.add("roshan");
+        l1.add("dilhi");
+
+        l2.add("rtavi");
+        l2.add("ratri");
+        l2.add("summer");
+        l1.remove(3);
+      l1.removeAll(l2);
+        l1.addAll(l2);
+
+
+        for(int i=0;i<=4;i++)
+        {
+            System.out.println(l1.get(i));
+        }
+        System.out.println("array after ading "+l1);
+        System.out.println(l1.contains("roshan"));
+        System.out.println(l1.indexOf("ratri"));
+        System.out.println(l1.isEmpty());
+
+
+    }
+}

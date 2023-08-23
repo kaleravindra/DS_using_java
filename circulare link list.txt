@@ -1,0 +1,164 @@
+
+
+class Ls {
+    Node head;
+
+    class Node {
+
+        int data;
+
+        Node next;
+
+        Node(int data) {
+
+
+            this.data = data;
+            this.next = head;
+        }
+    }
+
+
+    public void insertatafirst(int val) {
+        Node newq = new Node(val);
+
+
+
+        newq.next=head;
+
+        head=newq;
+
+
+
+
+    }
+
+
+    public void insertatalast(int val) {
+
+        Node n2 = new Node(val);
+
+        Node m1 = head;
+        while (m1.next != head) {
+            m1 = m1.next;
+
+        }
+        m1.next = n2;
+
+
+    }
+
+    public void printlast() {
+
+      Node ptr=head;
+
+        do{
+
+            System.out.printf("%d->",ptr.data);
+            ptr=ptr.next;
+        }while(ptr!=null);
+        System.out.println("head");
+
+      //  System.out.println("null");
+
+    }
+
+
+    public void delet_first() {
+        Node h1 = head;
+        head = head.next;
+    }
+
+    public void deletlast() {
+
+        Node cnode = head;
+
+
+
+
+        Node cnode2 = head.next;
+        while (cnode2.next != null) {
+            cnode = cnode.next;
+            cnode2 = cnode2.next;
+        }
+        cnode.next = null;
+
+
+    }
+
+    public void deletgivenitem(int inedx) {
+
+        Node lp = head;
+        Node lp4 = head.next;
+
+
+        int i = 0;
+        while (i != inedx - 1) {
+
+            lp = lp.next;
+            lp4 = lp4.next;
+            i++;
+
+
+        }
+        lp.next = lp4.next;
+    }
+
+
+    public void givenitem(int item)
+    {
+        Node kj=head;
+        Node rt=head.next;
+
+
+
+        while(rt.data!=item && rt.next!=null)
+        {
+            kj=kj.next;
+            rt=rt.next;
+        }
+  if(rt.data==item)
+  {
+      kj.next=rt.next;
+  }
+
+
+
+    }
+
+}
+
+public class mu {
+    public static void main(String[] args) {
+
+
+      Ls bp=new Ls();
+
+        bp.insertatafirst(960);
+
+       bp.insertatafirst(45);
+        bp.insertatafirst(930);
+        bp.insertatafirst(940);
+        bp.insertatafirst(590);
+        bp.insertatafirst(990);
+
+
+
+    bp.printlast();
+bp.delet_first();
+
+        bp.printlast();
+
+        bp.printlast();
+
+        bp.deletlast();
+
+
+    bp.deletgivenitem(2);
+        bp.printlast();
+
+     bp.givenitem(45);
+        bp.printlast();
+
+
+    }
+}
